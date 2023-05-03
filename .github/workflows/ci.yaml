@@ -1,0 +1,18 @@
+# Name of the action, will show in the UI
+name: GitHub Actions Demo
+
+# What you want to trigger the action on; eg. anytime there is a push 
+on: [push]
+# you can have one or more jobs; kinda like nodes in a DAG
+# jobs run in paralell
+jobs:
+  # name of the job
+  Explore-GitHub-Actions:
+    # os
+    runs-on: ubuntu-latest
+    # steps run one after the other; steps can be named
+    steps:
+      - name: hello
+        run: | 
+        echo "hello world"
+      
