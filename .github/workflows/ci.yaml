@@ -12,10 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     # steps run one after the other; steps can be named
     steps:
+      # clones the content of the current repo into this context; pretty critical to all github actions..
+      - uses: actions/checkout@v3
       - name: hello
         run: | 
           echo "hello world"
-          
-      - name: this will fail
-        run: exit 1;
+      - name: run python script
+        run: |
+          pip install -r requirements.txt
+          python ci.py
+      
       
